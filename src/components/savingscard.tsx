@@ -1,70 +1,31 @@
 import dolarTop from '../assets/dolar-top.png';
 import fileIcon from '../assets/file-icon.png';
-import crossTopArrow from '../assets/cross-top-arrow.png';
-import crossBottomArrow from '../assets/cross-bottom-arrow.png';
 import blueArrowBottom from '../assets/blue-arrow-bottom.png';
-import threeDots from '../assets/three-dots.png';
 import dolar from '../assets/dolar.png';
+import TrandingAmountCards from "./partials/trending-amount-cards.tsx";
 
 export default function Savingcard() {
+
+    const dummyResponse = [
+        {icon: dolar, amount: 80010, change: 1.78, label: 'Total Income'},
+        {icon: dolarTop, amount: 300, change: -1.78, label: 'Total Expense'},
+        {icon: fileIcon, amount: 56000, change: 1.24, label: 'Total Saving'},
+    ]
 
     return (
         <div>
             {/* <!-- three box in one line --> */}
             <div className="w-full h-[174px] flex flex-row gap-[18px]">
                 {/* <!-- first box --> */}
-                <div className="w-[183.33px] h-[174px] border border-[#E5E6E6] rounded-[16px] p-4 gap-7 flex flex-col">
-                    <div className="w-[151.33px] h-[36px] flex justify-between items-center">
-                        <div className="w-[36px] h-[36px] p-[8px] bg-[#ECF4E9] rounded-[8px] flex items-center justify-center">
-                            <img src={dolar} alt="" className="w-[16px] h-[16px] cursor-pointer" />
-                        </div>
-                        <img src={threeDots} alt="" className="flex self-start cursor-pointer" />
-                    </div>
-                    <div className="w-[151.33px] h-[78px] flex flex-col justify-between">
-                        <div className="w-[49px] h-[12px] rounded-[15px] bg-[#BBF49C] flex items-center justify-center">
-                            <img src={crossTopArrow} alt="" />
-                            <span className="text-[8px] text-[#1E4841] font-medium">+ 1.78 %</span>
-                        </div>
-                        <p className="font-bold text-[24px] text-[#242E2C]">$78,000</p>
-                        <p className="font-normal text-[12px] text-[#242E2C]">Total Income</p>
-                    </div>
-                </div>
 
-                {/* <!-- second box --> */}
-                <div className="w-[183.33px] h-[174px] border border-[#E5E6E6] rounded-[16px] p-4 gap-7 flex flex-col">
-                    <div className="w-[151.33px] h-[36px] flex justify-between items-center">
-                        <div className="w-[36px] h-[36px] p-[8px] bg-[#ECF4E9] rounded-[8px] flex items-center justify-center">
-                            <img src={dolarTop} alt="" className="w-[16px] h-[16px] cursor-pointer" />
-                        </div>
-                        <img src={threeDots} alt="" className="flex self-start cursor-pointer" />
-                    </div>
-                    <div className="w-[151.33px] h-[78px] flex flex-col justify-between">
-                        <div className="w-[49px] h-[12px] rounded-[15px] bg-[#FDCED1] flex items-center justify-center">
-                            <img src={crossBottomArrow} alt="" />
-                            <span className="text-[8px] text-[#F73541] font-medium">- 1.78 %</span>
-                        </div>
-                        <p className="font-bold text-[24px] text-[#242E2C]">$43,000</p>
-                        <p className="font-normal text-[12px] text-[#242E2C]">Total Expense</p>
-                    </div>
-                </div>
+                {dummyResponse.map((item, index) =>
+                                       <TrandingAmountCards icon={item.icon}
+                                                            amount={item.amount}
+                                                            change={item.change}
+                                                            label={item.label}
+                                                            key={index}/>
+                )}
 
-                {/* <!-- third box --> */}
-                <div className="w-[183.33px] h-[174px] border border-[#E5E6E6] rounded-[16px] p-4 gap-7 flex flex-col">
-                    <div className="w-[151.33px] h-[36px] flex justify-between items-center">
-                        <div className="w-[36px] h-[36px] p-[8px] bg-[#ECF4E9] rounded-[8px] flex items-center justify-center">
-                            <img src={fileIcon} alt="" className="w-[16px] h-[16px] cursor-pointer" />
-                        </div>
-                        <img src={threeDots} alt="" className="flex self-start cursor-pointer" />
-                    </div>
-                    <div className="w-[151.33px] h-[78px] flex flex-col justify-between">
-                        <div className="w-[49px] h-[12px] rounded-[15px] bg-[#BBF49C] flex items-center justify-center">
-                            <img src={crossTopArrow} alt="" />
-                            <span className="text-[8px] text-[#1E4841] font-medium">+ 1.24 %</span>
-                        </div>
-                        <p className="font-bold text-[24px] text-[#242E2C]">$56,000</p>
-                        <p className="font-normal text-[12px] text-[#242E2C]">Total Savings</p>
-                    </div>
-                </div>
             </div>
 
             {/* <!-- chart --> */}
@@ -72,8 +33,9 @@ export default function Savingcard() {
                 <div className="justify-center flex">
                     <div className="w-[554px] h-[32px] flex justify-between items-center mt-3">
                         <p className="text-[#242E2C] text-[16px] font-bold">Cashflow</p>
-                        <button className="w-[90px] h-[32px] gap-1 rounded-[8px] px-[8px] pt-[8px] pb-[8px] pl-[12px] border border-[#E5E6E6] text-[#1E4841] font-semibold text-[12px] flex flex-row justify-between items-center">
-                            This Year  <img src={blueArrowBottom} alt="" className="w-[7.88px] h-[4.38px]" />
+                        <button
+                            className="w-[90px] h-[32px] gap-1 rounded-[8px] px-[8px] pt-[8px] pb-[8px] pl-[12px] border border-[#E5E6E6] text-[#1E4841] font-semibold text-[12px] flex flex-row justify-between items-center">
+                            This Year <img src={blueArrowBottom} alt="" className="w-[7.88px] h-[4.38px]"/>
                         </button>
                     </div>
                 </div>
