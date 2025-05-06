@@ -1,9 +1,17 @@
+import { useState } from 'react';
 import sidebar from '../assets/sidebar.png';
 import sortIcon from '../assets/Sort.png';
 import blueArrowBottom from '../assets/blue-arrow-bottom.png';
 import Transactioncard from './transactioncard';
 
 export default function Transaction() {
+    const [show, setShow] = useState(false);
+    const [select, setSelect] = useState("This Month");
+
+    const click = (option :string) => {
+        setSelect(option);
+        setShow(false);
+    };
     return (
 
         <div className="w-[586px] h-[353px] gap-4 rounded-[16px] border border-[#E5E6E6] p-4 mt-5">
@@ -12,9 +20,23 @@ export default function Transaction() {
                 <div className="w-[142px] h-[32px] gap-2">
 
                     <div className="flex gap-2">
-                        <div className="w-[100px] h-[32px] gap-1 rounded-[8px] mr-[2px] p-[8px_12px_8px_8px] border border-[#E5E6E6] flex items-center justify-between cursor-pointer">
-                            <span className="text-[#1E4841] text-[12px] font-semibold">This Month</span>
-                            <img src={blueArrowBottom} alt="Icon" />
+                    <div className="relative">
+                            <button
+                                className="w-[100px] h-[32px] gap-1 rounded-[8px] mr-[2px] p-[8px_12px_8px_8px] border border-[#E5E6E6] flex items-center justify-between cursor-pointer"
+                                onClick={() => setShow(!show)}
+                            >
+                                <span className="text-[#1E4841] text-[12px] font-semibold">{select}</span>
+                                <img src={blueArrowBottom} alt="Icon" />
+                            </button>
+
+                            {show && (
+                                <div className="absolute top-[38px] right-0 bg-white border border-[#E5E6E6] rounded-md shadow-md z-10">
+                                    <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("This Month")}>This Month</div>
+                                    <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("Last Month")}>Last Month</div>
+                                    <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("This Year")}>This Year</div>
+                                    <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("Last Year")}>Last Year</div>
+                                </div>
+                            )}
                         </div>
 
                         <div className="w-[32px] h-[32px] rounded-[8px] border border-[#E5E6E6] p-2 flex items-center justify-center cursor-pointer">

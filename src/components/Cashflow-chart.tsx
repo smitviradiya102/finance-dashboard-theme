@@ -1,15 +1,36 @@
+import { useState } from 'react';
 import blueArrowBottom from '../assets/blue-arrow-bottom.png';
 export default function Cashflow() {
-      
+    const [show, setshow] = useState(false);
+    const [select, setselect] = useState("This Year");
+
+    const click = (option : string) => {
+        setselect(option);
+        setshow(false);
+    };
     return (
 
        <div className="w-[586px] h-[321px] border border-[#E5E6E6] gap-[18px] rounded-[16px] mt-[20px]">
        <div className="justify-center flex">
            <div className="w-[554px] h-[32px] flex justify-between items-center mt-3">
                <p className="text-[#242E2C] text-[16px] font-bold">Cashflow</p>
-               <button className="w-[90px] h-[32px] gap-1 rounded-[8px] px-[8px] pt-[8px] pb-[8px] pl-[12px] border border-[#E5E6E6] text-[#1E4841] font-semibold text-[12px] flex flex-row justify-between items-center">
-                   This Year  <img src={blueArrowBottom} alt="" className="w-[7.88px] h-[4.38px]" />
-               </button>
+               <div className="relative">
+               <button
+                            className="w-[100px] h-[32px] gap-1 rounded-[8px] px-[8px] pt-[8px] pb-[8px] pl-[12px] border border-[#E5E6E6] text-[#1E4841] font-semibold text-[12px] flex flex-row justify-between items-center"
+                            onClick={() => setshow(!show)}
+                        >
+                            {select}
+                            <img src={blueArrowBottom} alt="" className="w-[7.88px] h-[4.38px] ml-1" />
+                        </button>
+
+                        {show && (
+                            <div className="absolute top-[38px] right-0 bg-white border border-[#E5E6E6] rounded-md shadow-md z-10">
+                                <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("This Year")}>This Year</div>
+                                <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("This Month")}>This Month</div>
+                                <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("Last Year")}>Last Year</div>
+                            </div>
+                        )}
+                     </div>   
            </div>
        </div>
 
