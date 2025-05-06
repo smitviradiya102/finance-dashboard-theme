@@ -14,8 +14,8 @@ interface ProgressCards {
           <div className="w-[28px] h-[28px] p-[6px] bg-[#ECF4E9] rounded-[8px] flex items-center justify-center gap-[28px]">
             <img src={icon} alt="" />
           </div>
-          <p className="pr-8 font-medium text-[12px] text-[#242E2C]">{title}</p>
-          <img src="/assets/three-dots.png" alt="" className="cursor-pointer" />
+             <p className="font-medium text-[12px] text-[#242E2C] pr-12">{title}</p>
+             <img src="/assets/three-dots.png" alt="" className="cursor-pointer" />     
         </div>
   
         <div className="w-[223px] h-[31px] gap-[10px]">

@@ -2,7 +2,7 @@
 import piramind from '../assets/piramind.png';
 import aroplan from '../assets/aroplan.png';
 import home from '../assets/home.png';
-import ProgressCard from './progresscard';
+import ProgressCard from './ProgressCard';
 
 export default function Progress() {
   return (

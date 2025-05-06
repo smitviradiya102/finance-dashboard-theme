@@ -14,7 +14,7 @@ export default function RecentActivitycard({
   const isToday = dayLabel === "Today";
 
   return (
-    <div className={`${isToday ? 'h-[45px]' : 'h-[61px]'} flex items-center`}>
+    <div className={`${isToday ? 'h-[45px] mt-[-8px]` ': 'h-[65px] mt-[-8px]'} flex items-center`}>
       <div className="w-[30px] h-full flex flex-col items-center justify-start">
         <div className="bg-[#BBF49C] w-[30px] h-[30px] rounded-full"></div>
         <span className={`w-[1px] bg-[#BCBEBD] ${isToday ? 'h-[13px]' : 'h-[29px]'}`}></span>

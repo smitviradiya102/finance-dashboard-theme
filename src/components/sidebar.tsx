@@ -1,5 +1,3 @@
-// Sidebar.tsx
-
 import logo from '../assets/logo.png';
 import icon from '../assets/icon.png';
 import payment from '../assets/payment.png';
@@ -16,7 +14,7 @@ import SidebarItem from './SidebarItem';
 export default function Sidebar() {
   return (
     <div>
-      <div className="w-[125px] h-[38px] gap-[10px] mr-[6px] flex items-center pt-2 cursor-pointer">
+      <div className="w-[125px] h-[38px] gap-[10px] mr-[6px] flex items-center pt-2 pl-4 cursor-pointer">
         <img src={logo} alt="Logo" className="w-[22px] h-[22px]" />
         <p className="text-[#242E2C] font-bold text-[18px]">COINEST</p>
       </div>
