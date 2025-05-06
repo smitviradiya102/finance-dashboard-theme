@@ -1,14 +1,35 @@
+import { useState } from 'react';
 import blueArrowBottom from '../assets/blue-arrow-bottom.png';
 import StatisticCard from './StatisticCard';
 
 export default function StatisticBox() {
+  const [show, setShow] = useState(false);
+  const [select, setSelect] = useState("This Month");
+
+  const click = (option : string) => {
+    setSelect(option);
+    setShow(false); 
+  };
+
   return (
     <section className="w-[283px] h-[460px] gap-[20px] p-[16px] rounded-[16px] border border-[#E5E6E6] flex flex-col">
       <div className="w-[251px] h-[19px] flex justify-between items-center">
         <p className="font-bold text-[16px] text-[#242E2C]">Statistic</p>
-        <p className="font-semibold text-[12px] text-[#1E4841] text-[10px] flex items-center mr-1 cursor-pointer">
-          This Month <img src={blueArrowBottom} alt="" className="w-[7px] h-[4px] ml-1" />
-        </p>
+        <div
+          className="font-semibold text-[12px] text-[#1E4841] flex items-center mr-1 cursor-pointer"
+          onClick={() => setShow(!show)} 
+        >
+          {select}
+          <img src={blueArrowBottom} alt="" className="w-[7px] h-[4px] ml-1" />
+        </div>
+
+        {show && (
+           <div className="absolute top-[120px] right-[220px] bg-white border border-[#E5E6E6] rounded-md shadow-md z-10">
+            <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("Last Month")}>Last Month</div>
+            <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("This Year")}>This Year</div>
+            <div className="cursor-pointer px-3 py-1 hover:bg-gray-100 text-[14px]" onClick={() => click("Last Year")}>Last Year</div>
+          </div>
+        )}
       </div>
 
       <div className="w-[251px] h-[28px] flex flex-row">
