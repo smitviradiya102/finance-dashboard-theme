@@ -1,5 +1,3 @@
-// SidebarItem.tsx
-
 interface SidebarItems {
     icon: string;
     label: string;

@@ -7,7 +7,7 @@ import Footer from './components/footer'
 import Progress from './components/progress'
 import Transaction from './components/transaction'
 import Sidebarbox from './components/sidebar-box'
-import AndrewForbist from './components/andrew-forbist'
+import Card from './components/card'
 import FourIcon from './components/four-icon'
 import Cashflow from './components/Cashflow-chart'
 import StatisticBox from './components/StatisticsBox';
@@ -27,7 +27,7 @@ function App() {
           <div className="h-[888px] flex flex-wrap justify-center gap-5 mt-5">
             <div className="w-full h-[888px]  rounded flex justify-center">
               <div className="w-[283px] h-[888px] bg-white  flex flex-col gap-5">
-                <AndrewForbist />
+                <Card />
                 <Dailylimit />
                 <FourIcon />
                 <Progress />

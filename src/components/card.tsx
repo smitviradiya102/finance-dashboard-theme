@@ -1,7 +1,7 @@
 import symbol2 from '../assets/symbol-2.png';
 import union from '../assets/Union.png';
 
-export default function AndrewForbist() {
+export default function Card() {
 
     return (
       <section className="w-full h-auto min-h-[174px] bg-[#1E4841] rounded-[16px] p-4 flex flex-col gap-[21px] text-white">

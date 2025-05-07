@@ -17,10 +17,9 @@ export default function Progress() {
         <p className="text-[24px] text-[#1E4841] font-bold">$84,500</p>
       </div>
 
-      {/* Cards */}
-      <ProgressCard icon={piramind} title="Emergency Fund" saved="$5,000" percent="50%" target="$10,000" />
-      <ProgressCard icon={aroplan} title="Vacation Fund" saved="$5,000" percent="100%" target="$5,000" />
-      <ProgressCard icon={home} title="Home Down Payment" saved="$7,250" percent="36.25%" target="$20,000" />
+      <ProgressCard icon={piramind} title="Emergency Fund" saved="5,000" percent="50%" target="10,000" currency="$" />
+      <ProgressCard icon={aroplan} title="Vacation Fund" saved="5,000" percent="100%" target="5,000"  currency="$"/>
+      <ProgressCard icon={home} title="Home Down Payment" saved="7,250" percent="36.25%" target="20,000" currency="$" />
     </section>
   );
 }

@@ -47,11 +47,11 @@ export default function StatisticBox() {
       <div className="w-[251px] h-[148px]"></div>
 
       <div className="w-[251px] h-[173px] gap-[12px] flex flex-col">
-        <StatisticCard percentage="60%" category="Rent & Living" amount="$2,100" color="bg-[#1E4841]" />
-        <StatisticCard percentage="15%" category="Investment" amount="$525" color="bg-[#BBF49C]" />
-        <StatisticCard percentage="12%" category="Education" amount="$420" color="bg-[#ECF4E9]" />
-        <StatisticCard percentage="8%" category="Food & Drink" amount="$280" color="bg-[#E5E6E6]" />
-        <StatisticCard percentage="5%" category="Entertainment" amount="$175" color="bg-[#BCBEBD]" />
+        <StatisticCard currency="$" percentage="60%" category="Rent & Living" amount="$2,100" color="bg-[#1E4841]" />
+        <StatisticCard currency="$" percentage="15%" category="Investment" amount="$525" color="bg-[#BBF49C]" />
+        <StatisticCard currency="$" percentage="12%" category="Education" amount="$420" color="bg-[#ECF4E9]" />
+        <StatisticCard currency="$" percentage="8%" category="Food & Drink" amount="$280" color="bg-[#E5E6E6]" />
+        <StatisticCard currency="$" percentage="5%" category="Entertainment" amount="$175" color="bg-[#BCBEBD]" />
       </div>
     </section>
   );

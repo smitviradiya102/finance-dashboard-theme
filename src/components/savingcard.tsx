@@ -6,9 +6,10 @@ interface SavingCards {
   per: number;
   price: string;
   total: string;
+  currency: string; // NEW
 }
 
-export default function SavingCard({ icon, per, price, total, arrow }: SavingCards) {
+export default function SavingCard({ icon, per, price, total, arrow, currency }: SavingCards) {
   const bgColor = per >= 0 ? '#BBF49C' : '#FDCED1';
   const textColor = per >= 0 ? '#1E4841' : '#F73541';
 
@@ -27,10 +28,12 @@ export default function SavingCard({ icon, per, price, total, arrow }: SavingCar
           style={{ backgroundColor: bgColor, color: textColor }}
         >
           <img src={arrow} alt="arrow" className="pr-2" />
-          <span className="text-[8px] font-medium">{per}%</span>
+          <span className="text-[8px] font-medium">{per.toFixed(2)}%</span>
         </div>
 
-        <p className="font-bold text-[24px] text-[#242E2C]">{price}</p>
+        <p className="font-bold text-[24px] text-[#242E2C]">
+          {currency}{price}
+        </p>
         <p className="font-normal text-[12px] text-[#242E2C]">{total}</p>
       </div>
     </div>

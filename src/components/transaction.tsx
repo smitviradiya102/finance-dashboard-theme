@@ -8,7 +8,7 @@ export default function Transaction() {
     const [show, setShow] = useState(false);
     const [select, setSelect] = useState("This Month");
 
-    const click = (option :string) => {
+    const click = (option: string) => {
         setSelect(option);
         setShow(false);
     };
@@ -54,11 +54,56 @@ export default function Transaction() {
                     <p className="w-[62px] h-[13px] font-normal text-[#6B7271] text-[10px] flex items-center">Status <img src={sortIcon} alt="" className="w-[12px] h-[12px]" /></p>
                 </div>
 
-                <Transactioncard name='Electricity Bill' transaction_name='Payments' date='2028-03-01' time='04:28:48' amount='295.81' note='Payment for monthly electricity bill' status='Failed' />
-                <Transactioncard name='Weekly Groceries' transaction_name='Shopping' date='2028-03-04' time='04:28:48' amount='204.07' note='Groceries shopping at local supermarket' status='Completed' />
-                <Transactioncard name='Movie Night' transaction_name='Entertainment' date='2028-02-27' time='04:28:48' amount='97.84' note='Tickets for movie and snacks' status='Pending' />
-                <Transactioncard name='Medical Check-up' transaction_name='Healthcare' date='2028-02-07' time='04:28:48' amount='323.33' note='Routine health check-up and medications' status='Pending' />
-                <Transactioncard name='Dinner at Italian Restaurant' transaction_name='Dining Out' date='2028-02-11' time='04:28:48' amount='226.25' note='Dining out with family at a local Italian restaurant' status='Pending' />
+                <Transactioncard 
+                name='Electricity Bill' 
+                transaction_name='Payments' 
+                date='2028-03-01' 
+                time='04:28:48' 
+                amount='295.81' 
+                note='Payment for monthly electricity bill' 
+                status='Failed'
+                currency="$"  
+                />
+                <Transactioncard 
+                name='Weekly Groceries' 
+                transaction_name='Shopping' 
+                date='2028-03-04' 
+                time='04:28:48' 
+                amount='204.07' 
+                note='Groceries shopping at local supermarket' 
+                status='Completed'
+                currency="$"  
+                />
+                <Transactioncard 
+                name='Movie Night' 
+                transaction_name='Entertainment' 
+                date='2028-02-27' 
+                time='04:28:48' 
+                amount='97.84' 
+                note='Tickets for movie and snacks' 
+                status='Pending'
+                currency="$"  
+                />
+                <Transactioncard 
+                name='Medical Check-up' 
+                transaction_name='Healthcare' 
+                date='2028-02-07' 
+                time='04:28:48' 
+                amount='323.33' 
+                note='Routine health check-up and medications' 
+                status='Pending'
+                currency="$" 
+                />
+                <Transactioncard 
+                name='Dinner at Italian Restaurant' 
+                transaction_name='Dining Out' 
+                date='2028-02-11' 
+                time='04:28:48' 
+                amount='226.25' 
+                note='Dining out with family at a local Italian restaurant' 
+                status='Pending'
+                currency="$"  
+                />
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ export default function Cashflow() {
         setselect(option);
         setshow(false);
     };
-
+    
     return (
         <div className="w-[586px] h-[321px] border border-[#E5E6E6] gap-[18px] rounded-[16px] mt-[20px] relative">
             <div className="justify-center flex">

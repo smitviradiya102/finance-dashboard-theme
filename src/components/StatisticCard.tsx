@@ -3,9 +3,10 @@ interface StatisticCards {
     category: string;
     amount: string;
     color: string;
+    currency : string;
   }
   
-  export default function StatisticCard({ percentage, category, amount, color }: StatisticCards) {
+  export default function StatisticCard({ percentage, category, amount, color, currency }: StatisticCards) {
     const statusColor = percentage === "60%" ? "#ECF4E9" : "#242E2C";
     return (
       <div className="w-[251px] h-[25px] flex justify-between items-center">
@@ -15,8 +16,9 @@ interface StatisticCards {
           </p>
           <p className="font-medium text-[12px] text-[#242E2C]">{category}</p>
         </div>
-        <p className="font-semibold text-[12px] text-[#242E2C]">{amount}</p>
+        <p className="font-semibold text-[12px] text-[#242E2C]">{currency}{amount}</p>
       </div>
     );
   }
   
+

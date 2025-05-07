@@ -6,6 +6,7 @@ interface transactioncards {
     amount: string;
     note: string;
     status: string;
+    currency :string;
   }
   
   export default function Transactioncard({
@@ -16,6 +17,7 @@ interface transactioncards {
     amount,
     note,
     status,
+    currency,
   }: transactioncards) {
 
     const statusColor = status === "Failed" ? "#F73541" : status === "Completed" ? "#1E4841" : "#F2B007";
@@ -33,7 +35,7 @@ interface transactioncards {
             <span className="font-normal text-[10px] text-[#6B7271]">{time}</span>
           </p>
           <p className="w-[48px] h-[13px] flex flex-col justify-center">
-            <span className="font-semibold text-[10px] text-[#6B7271]">${amount}</span>
+            <span className="font-semibold text-[10px] text-[#6B7271]">{currency}{amount}</span>
           </p>
           <p className="w-[130px] h-[26px] flex flex-col justify-center leading-[14px]">
             <span className="font-normal text-[10px] text-[#6B7271]">{note}</span>
